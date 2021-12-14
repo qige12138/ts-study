@@ -1,0 +1,23 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "sourceMap": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "removeComments": true,
+    "jsx": "react",
+    "noEmit": false,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "outDir": "/",
+    "baseUrl": "./",
+    "paths": {
+      "src": ["src/*"]
+    }
+  },
+  "exclude": ["node_modules","dist"]
+}
