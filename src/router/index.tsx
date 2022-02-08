@@ -7,16 +7,17 @@
  * @FilePath: /tsstudy/src/router/index.tsx
  */
 import React, { useEffect } from 'react';
-import { useRoutes, useNavigate } from 'react-router-dom';
+import { useRoutes, useNavigate, useLocation } from 'react-router-dom';
 import routes from './router';
 import localStore from 'src/utils/localStore';
 
 const App = () => {
+  const curUrl = `${useLocation().pathname}${useLocation().search}`;
   const element = useRoutes(routes);
   const userInfo = localStore.getLocalStorage('userInfo');
   const nav = useNavigate();
   useEffect(() => {
-    userInfo ? nav('/') : nav('/login');
+    userInfo ? nav(curUrl) : nav('/login');
   }, []);
   return <>{element}</>;
 };
