@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2021-12-10 11:11:10
- * @LastEditTime: 2021-12-14 09:04:45
- * @LastEditors: your name
+ * @LastEditTime: 2022-04-20 15:01:59
+ * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /tsstudy/src/utils/localStore.ts
  */
@@ -14,7 +14,7 @@ const localStore = {
    * @param key String
    * @param val any
    */
-  setLocalStorage(key: string, val: any) {
+  setLocalStorage(key: string, val: unknown) {
     if (!key) return null;
     const keyCode = Base64.encode(key);
     const valCode = Base64.encode(JSON.stringify(val));
@@ -25,7 +25,7 @@ const localStore = {
    * @param key
    * @returns
    */
-  getLocalStorage(key: string): any {
+  getLocalStorage(key: string): unknown {
     if (!key) return null;
     const keyCode = Base64.encode(key);
     const valCode = localStorage.getItem(keyCode);
